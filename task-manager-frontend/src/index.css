@@ -1,50 +1,89 @@
+.app-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #cddcf5;
+}
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
+  font-family: "Inter", sans-serif;
+  background: #1f3e85;
+  color: #e2e8f0;
 }
 
 .container {
-  max-width: 500px;
+  max-width: 550px;
   margin: 80px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 h2 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #334155;
+  color: white;
+}
+
+input::placeholder {
+  color: #94a3b8;
 }
 
 button {
-  margin-top: 10px;
+  margin-top: 12px;
   padding: 10px;
   border: none;
-  background: #4CAF50;
+  border-radius: 8px;
+  background: #3b82f6;
   color: white;
-  border-radius: 6px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 button:hover {
-  background: #45a049;
+  background: #2563eb;
 }
 
 .task {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 6px;
-  background: #f1f1f1;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #334155;
+}
+
+.task span {
+  flex: 1;
+}
+
+.task button {
+  margin-left: 8px;
+  background: #ef4444;
+}
+
+.task button:hover {
+  background: #dc2626;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+body {
+  background: radial-gradient(circle at top, #79a3e2, #79a3e2);
 }

@@ -32,6 +32,9 @@ function Login() {
   };
 
  return (
+    <div>
+    <h1 className="app-title">Taskly</h1>
+    
   <div className="container">
     <h2>Login / Signup</h2>
 
@@ -44,9 +47,11 @@ function Login() {
       type="password"
       onChange={(e) => setPassword(e.target.value)}
     />
-
+<div className="button-group">
     <button onClick={handleLogin}>Login</button>
     <button onClick={handleSignup}>Signup</button>
+</div>
+  </div>
   </div>
 );
 }

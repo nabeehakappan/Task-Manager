@@ -60,6 +60,8 @@ const logout = () => {
   window.location.href = "/";
 };
 return (
+    <div>
+    <h1 className="app-title">Taskly</h1>
   <div className="container">
     <h2>Dashboard</h2>
 
@@ -68,7 +70,10 @@ return (
       value={title}
       onChange={(e) => setTitle(e.target.value)}
     />
+    <div className="button-group">
     <button onClick={addTask}>Add</button>
+     <button onClick={logout}>Logout</button>
+    </div>
 
     {tasks.map((task) => (
       <div key={task._id} className="task">
@@ -88,8 +93,10 @@ return (
         <button onClick={() => editTask(task)}>Edit</button>
 
       </div>
+      
     ))}
-    <button onClick={logout}>Logout</button>
+   
+  </div>
   </div>
 );
 }
