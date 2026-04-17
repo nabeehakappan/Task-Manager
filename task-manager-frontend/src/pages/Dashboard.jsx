@@ -37,7 +37,7 @@ function Dashboard() {
 
   const toggleTask = async (task) => {
     await axios.put(
-      `https://taskly-a70p.onrender.com/tasks/${task._id}`,
+      `https://taskly-a70p.onrender.com/api/tasks/${task._id}`,
       { completed: !task.completed },
       { headers: { Authorization: token } }
     );
