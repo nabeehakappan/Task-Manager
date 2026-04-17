@@ -8,7 +8,7 @@ function Dashboard() {
   const token = localStorage.getItem("token");
 
   const fetchTasks = async () => {
-    const res = await axios.get("http://localhost:5000/api/tasks", {
+    const res = await axios.get("https://taskly-a70p.onrender.com/api/tasks", {
       headers: { Authorization: token },
     });
     setTasks(res.data);
@@ -20,7 +20,7 @@ function Dashboard() {
 
   const addTask = async () => {
     await axios.post(
-      "http://localhost:5000/api/tasks",
+      "https://taskly-a70p.onrender.com/api/tasks",
       { title },
       { headers: { Authorization: token } }
     );
@@ -29,7 +29,7 @@ function Dashboard() {
   };
 
   const deleteTask = async (id) => {
-    await axios.delete(`http://localhost:5000/api/tasks/${id}`, {
+    await axios.delete(`https://taskly-a70p.onrender.com/api/tasks/${id}`, {
       headers: { Authorization: token },
     });
     fetchTasks();
@@ -37,7 +37,7 @@ function Dashboard() {
 
   const toggleTask = async (task) => {
     await axios.put(
-      `http://localhost:5000/api/tasks/${task._id}`,
+      `https://taskly-a70p.onrender.com/tasks/${task._id}`,
       { completed: !task.completed },
       { headers: { Authorization: token } }
     );
@@ -48,7 +48,7 @@ function Dashboard() {
   if (!newTitle) return;
 
   await axios.put(
-    `http://localhost:5000/api/tasks/${task._id}`,
+    `https://taskly-a70p.onrender.com/api/tasks/${task._id}`,
     { title: newTitle },
     { headers: { Authorization: token } }
   );
