@@ -4,6 +4,7 @@ import axios from "axios";
 function Dashboard() {
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState("");
+  const [search, setSearch] = useState("");
 
   const token = localStorage.getItem("token");
 
@@ -59,6 +60,9 @@ const logout = () => {
   localStorage.removeItem("token");
   window.location.href = "/";
 };
+const filteredTasks = tasks.filter((task) =>
+  task.title.toLowerCase().includes(search.toLowerCase())
+);
 return (
     <div>
     <h1 className="app-title">Taskly</h1>
@@ -72,10 +76,16 @@ return (
     />
     <div className="button-group">
     <button onClick={addTask}>Add</button>
+    <input
+  type="text"
+  placeholder="Search tasks..."
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+/>
      <button onClick={logout}>Logout</button>
     </div>
 
-    {tasks.map((task) => (
+    {filteredTasks.map((task) => (
       <div key={task._id} className="task">
         <span
           onClick={() => toggleTask(task)}
